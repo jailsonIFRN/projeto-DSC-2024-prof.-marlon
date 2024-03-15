@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AlunoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+
 Route::get('/novo-arquivo', function () {
     return view('teste01');
 });
+
+Route::get('/novo-arquivo1', function () {
+    return view('teste02');
+});
+
+Route::get('/novo-arquivo', [AlunoController::class, 'index']);
